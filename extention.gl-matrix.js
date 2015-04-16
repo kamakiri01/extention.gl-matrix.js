@@ -41,24 +41,3 @@ mat2.multiplyVec2 = function (a,b,c){c||(c=b);
     c[1]=d*a[2]+b*a[3];
     return c
 }
-
-//old
-//mat2.multiply
-function (a,b,c){c||(c=a);
-    var d=a[0],e=a[1],g=a[2],a=a[3];
-    c[0]=d*b[0]+e*b[2];
-    c[1]=d*b[1]+e*b[3];
-    c[2]=g*b[0]+a*b[2];
-    c[3]=g*b[1]+a*b[3];
-    return c}
-
-//new 
-function (out, a, b) {
-    var a0 = a[0], a1 = a[1], a2 = a[2], a3 = a[3];
-    var b0 = b[0], b1 = b[1], b2 = b[2], b3 = b[3];
-    out[0] = a0 * b0 + a2 * b1;
-    out[1] = a1 * b0 + a3 * b1;
-    out[2] = a0 * b2 + a2 * b3;
-    out[3] = a1 * b2 + a3 * b3;
-    return out;
-}
